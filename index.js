@@ -70,7 +70,7 @@ app.get('/:username', function(req, res) {
         ],
         function(err, results) {
             if (err) {
-                res.send(err.message);
+                res.send(err.message, 500);
                 return;
             }
             res.send(JSON.stringify(results));
