@@ -40,6 +40,10 @@ app.get('/:username', function(req, res) {
             }
         ],
         function(err, results) {
+            if (err) {
+                res.status(404);
+                res.send("User not found");
+            }
             res.send(JSON.stringify(results));
         }
     );
