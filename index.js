@@ -23,7 +23,7 @@ app.get('/:username', function(req, res) {
                         msg = "No data for " + username;
                         var err = new Error(msg);
                         util.debug(msg);
-                        callback(err);
+                        callback(err, 404);
                         return;
                     }
                     var segments = data.uri.split('/');
@@ -43,7 +43,7 @@ app.get('/:username', function(req, res) {
                         msg = "No talks found for " + username;
                         util.debug(msg);
                         var err = new Error(msg);
-                        callback(err);
+                        callback(err, 404);
                         return;
                     }
                     util.debug("Found " + talk_ids.length + " talks");
@@ -57,7 +57,7 @@ app.get('/:username', function(req, res) {
                         msg = "No comments found for " + username;
                         util.debug(msg);
                         var err = new Error(msg);
-                        callback(err);
+                        callback(err, 404);
                         return;
                     }
                     callback(null, comments.join());
@@ -70,7 +70,8 @@ app.get('/:username', function(req, res) {
         ],
         function(err, results) {
             if (err) {
-                res.send(err.message, 500);
+                res.status(results);
+                res.send(err.message);
                 return;
             }
             res.send(JSON.stringify(results));
