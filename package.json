@@ -1,0 +1,27 @@
+{
+  "name": "visual-joindin",
+  "version": "1.0.0",
+  "description": "Visualizing JoindIn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samantha Quinones",
+  "license": "ISC",
+  "dependencies": {
+    "WNdb": "^3.1.1",
+    "async": "^0.9.0",
+    "browserify": "^7.0.0",
+    "extend": "^2.0.0",
+    "gramophone": "0.0.3",
+    "gulp": "^3.8.10",
+    "http-browserify": "^1.7.0",
+    "lapack": "0.0.7"
+  },
+  "devDependencies": {
+    "corsproxy": "^0.2.14",
+    "gulp-browserify": "^0.5.0",
+    "gulp-minify-html": "^0.1.7",
+    "gulp-sourcemaps": "^1.2.8"
+  }
+}
