@@ -45,4 +45,4 @@ app.get('/:username', function(req, res) {
     );
 });
 
-app.listen(process.argv[2]);
+app.listen(process.env.PORT);
